@@ -1,0 +1,12 @@
+% function [pk,dis]=peakget(dismatr,dist1,dist2,spec)
+% [pktmp,lc1]=min(abs(dismatr-dist1));
+% [pktmp,lc2]=min(abs(dismatr-dist2));
+% % spec=10*log10(abs(sss));
+% [pk,lc]=max(spec(lc1:lc2));
+% dis=dismatr(lc+lc1-1);
+function dis=peakget(dismatr,dist1,dist2,spec)
+[pktmp,lc1]=min(abs(dismatr-dist1));
+[pktmp,lc2]=min(abs(dismatr-dist2));
+% spec=10*log10(abs(sss));
+[pk,lc]=max(spec(lc1:lc2));
+dis=dismatr(lc+lc1-1);
